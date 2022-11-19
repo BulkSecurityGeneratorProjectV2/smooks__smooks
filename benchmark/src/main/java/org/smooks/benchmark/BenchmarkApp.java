@@ -139,7 +139,7 @@ public class BenchmarkApp {
         final URLConnection connection = url.openConnection();
         connection.setDoOutput(true);
 
-        final File testDatasetFile = File.createTempFile("dblp-2015-03-02", ".xml.gz");
+        final File testDatasetFile = Files.createTempFile("dblp-2015-03-02", ".xml.gz").toFile();
         final OutputStream fileOutputStream = Files.newOutputStream(Paths.get(testDatasetFile.toURI()));
 
         LOGGER.info("Downloading test dataset...");
